@@ -19,13 +19,13 @@ form.addEventListener("submit", (event) => {
   const paragraphPrecioNeto = document.createElement("p");
   paragraphPrecioNeto.textContent = `Precio neto (${cantidad} * ${precio}): ${precioNeto}`;
 
-  const paragraphDescuento = document.createElement("p");
-  paragraphDescuento.textContent = `Descuento (${impuesto}%): `;
+  const paragraphImpuesto = document.createElement("p");
+  paragraphImpuesto.textContent = `Impuesto para ${estado}(${impuesto}%): `;
 
   // Limpia el contenido anterior de div
   div.innerHTML = "";
 
   // Agrega el párrafo al div
   div.appendChild(paragraphPrecioNeto);
-  div.appendChild(paragraphDescuento);
+  div.appendChild(paragraphImpuesto);
 });

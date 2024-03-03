@@ -20,4 +20,8 @@ describe("Calcular precio", () => {
   it("Selecionar estado(CA) y devolver impuesto en porcentaje", () => {
     expect(impuesto_estado("CA",6)).toEqual(8.25);
   });
+
+  it("Selecionar estado(NV) y devolver impuesto en porcentaje", () => {
+    expect(impuesto_estado("NV",6)).toEqual(8.00);
+  });
 });
