@@ -5,4 +5,11 @@ function calcular_precio(a,b) {
   return precioneto;
   }
   
-  export default calcular_precio;
+function impuesto_estado(estado,precio){
+  let impuesto;
+  if(estado=="CA"){
+    impuesto=8.25;
+  }
+  return impuesto;
+}
+  export {calcular_precio,impuesto_estado};
