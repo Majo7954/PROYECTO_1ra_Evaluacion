@@ -1,15 +1,13 @@
-import sumar from "./sumador";
+import calcular_precioneto from "./totalizador";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const first = document.querySelector("#cantidad");
+const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
 
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "<p>" + calcular_precioneto(firstNumber) + "</p>";
 });
