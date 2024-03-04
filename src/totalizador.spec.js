@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto} from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden } from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -55,5 +55,9 @@ describe("Calcular precio", () => {
 
   it("Mostrar el impuesto en dolares(UT)", () => {
     expect(aplicar_impuesto(impuesto_estado("UT"),calcular_precio(20,3))).toEqual(3.99);
+  });
+  
+  it("Mostrar descuento de 3% si el total de la orden es mayor o igual a 1000", () => {
+    expect(descuento_totalOrden(1000)).toEqual(3);
   });
 });

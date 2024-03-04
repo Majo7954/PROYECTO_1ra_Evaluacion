@@ -1,4 +1,4 @@
-import { calcular_precio, impuesto_estado, aplicar_impuesto } from "./totalizador";
+import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden } from "./totalizador";
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
@@ -15,6 +15,7 @@ form.addEventListener("submit", (event) => {
   const precioNeto = calcular_precio(cantidad, precio);
   const impuesto = impuesto_estado(estado);
   const impuestoAplicado=aplicar_impuesto(impuesto_estado(estado),calcular_precio(cantidad, precio));
+  const descuento = descuento_totalOrden(precioNeto);
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -27,6 +28,8 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = "";
 
   // Agrega el párrafo al div
+  div.innerHTML = "<p> Descuento (" + descuento + "%)<p/>";
   div.appendChild(paragraphPrecioNeto);
   div.appendChild(paragraphImpuesto);
+
 });

@@ -34,4 +34,13 @@ function calcular_precio(a,b) {
     return impuesto_dolares;
   }
 
-  export {calcular_precio,impuesto_estado,aplicar_impuesto};
+  function descuento_totalOrden(totalOrden) {
+    let descuento;
+    if(totalOrden>=1000){
+      descuento = 3;
+    }else{
+      descuento = 0;}
+    return descuento;
+  }
+
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden};
