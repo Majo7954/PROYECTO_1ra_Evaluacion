@@ -18,8 +18,11 @@ function calcular_precio(a,b) {
         impuesto = 6.65;
         break;
       case "TX":
-          impuesto = 6.25;
-          break;
+        impuesto = 6.25;
+        break;
+      case "AL":
+        impuesto = 4.00;
+        break;
       default:
         impuesto = 0;
     }

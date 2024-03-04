@@ -32,4 +32,8 @@ describe("Calcular precio", () => {
   it("Selecionar estado(TX) y devolver impuesto en porcentaje", () => {
     expect(impuesto_estado("TX",6)).toEqual(6.25);
   });
+
+  it("Selecionar estado(AL) y devolver impuesto en porcentaje", () => {
+    expect(impuesto_estado("AL",6)).toEqual(4.00);
+  });
 });
