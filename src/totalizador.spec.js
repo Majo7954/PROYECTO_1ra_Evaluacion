@@ -56,8 +56,14 @@ describe("Calcular precio", () => {
   it("Mostrar el impuesto en dolares(UT)", () => {
     expect(aplicar_impuesto(impuesto_estado("UT"),calcular_precio(20,3))).toEqual(3.99);
   });
-  
+
   it("Mostrar descuento de 3% si el total de la orden es mayor o igual a 1000", () => {
     expect(descuento_totalOrden(1000)).toEqual(3);
+  });
+  it("Mostrar descuento de 5% si el total de la orden es mayor o igual a 3000", () => {
+    expect(descuento_totalOrden(3000)).toEqual(5);
+  });
+  it("Mostrar descuento de 5% si el total de la orden es mayor o igual a 3000", () => {
+    expect(descuento_totalOrden(4000)).toEqual(5);
   });
 });
