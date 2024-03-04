@@ -5,7 +5,7 @@ function calcular_precio(a,b) {
   return precioneto;
   }
   
-  function impuesto_estado(estado, precio) {
+  function impuesto_estado(estado) {
     let impuesto;
     switch (estado) {
       case "CA":
@@ -28,4 +28,10 @@ function calcular_precio(a,b) {
     }
     return impuesto;
   }
-  export {calcular_precio,impuesto_estado};
+
+  function aplicar_impuesto(impuesto, precioNeto){
+    let impuesto_dolares=precioNeto*(impuesto/100)
+    return impuesto_dolares;
+  }
+
+  export {calcular_precio,impuesto_estado,aplicar_impuesto};

@@ -1,4 +1,4 @@
-import { calcular_precio,impuesto_estado } from "./totalizador";
+import { calcular_precio, impuesto_estado, aplicar_impuesto } from "./totalizador";
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
@@ -13,14 +13,15 @@ form.addEventListener("submit", (event) => {
   const precio = Number.parseInt(second.value);
   const estado = estado_select.value;
   const precioNeto = calcular_precio(cantidad, precio);
-  const impuesto = impuesto_estado(estado,precioNeto)
+  const impuesto = impuesto_estado(estado);
+  const impuestoAplicado=aplicar_impuesto(impuesto_estado(estado),calcular_precio(cantidad, precio));
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
   paragraphPrecioNeto.textContent = `Precio neto (${cantidad} * ${precio}): ${precioNeto}`;
 
   const paragraphImpuesto = document.createElement("p");
-  paragraphImpuesto.textContent = `Impuesto para ${estado}(${impuesto}%): `;
+  paragraphImpuesto.textContent = `Impuesto para ${estado}(${impuesto}%): ${impuestoAplicado}`;
 
   // Limpia el contenido anterior de div
   div.innerHTML = "";
