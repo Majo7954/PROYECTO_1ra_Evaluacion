@@ -64,6 +64,9 @@ function calcular_precio(a,b) {
       case "electronicos":
         impuesto = 4;
         break;
+      case "muebles":
+        impuesto = 3;
+        break;
       default:
         impuesto = 0;
     }
