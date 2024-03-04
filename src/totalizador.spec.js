@@ -124,4 +124,25 @@ describe("Calcular precio", () => {
   it("Mostrar impuesto de 0% si la categoria del producto es varios", () => {
     expect(impuesto_categoria("varios")).toEqual(0);
   });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("bebidas")*calcular_precio(10,2)/100).toEqual(1.4);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("electronicos")*calcular_precio(10,2)/100).toEqual(0.8);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("muebles")*calcular_precio(10,2)/100).toEqual(0.6);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("vestimenta")*calcular_precio(10,2)/100).toEqual(0.4);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("alimentos")*calcular_precio(10,2)/100).toEqual(0);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("material")*calcular_precio(10,2)/100).toEqual(0);
+  });
+  it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
+    expect(impuesto_categoria("varios")*calcular_precio(10,2)/100).toEqual(0);
+  });
 });
