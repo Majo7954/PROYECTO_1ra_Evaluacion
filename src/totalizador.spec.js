@@ -112,4 +112,7 @@ describe("Calcular precio", () => {
   it("Mostrar impuesto de 3% si la categoria del producto es muebles", () => {
     expect(impuesto_categoria("muebles")).toEqual(3);
   });
+  it("Mostrar impuesto de 2% si la categoria del producto es vestimenta", () => {
+    expect(impuesto_categoria("vestimenta")).toEqual(2);
+  });
 });

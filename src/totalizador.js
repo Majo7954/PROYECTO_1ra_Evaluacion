@@ -67,6 +67,9 @@ function calcular_precio(a,b) {
       case "muebles":
         impuesto = 3;
         break;
+      case "vestimenta":
+        impuesto = 2;
+        break;
       default:
         impuesto = 0;
     }
