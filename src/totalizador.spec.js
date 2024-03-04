@@ -72,4 +72,10 @@ describe("Calcular precio", () => {
   it("Mostrar descuento de 7% si el total de la orden es mayor o igual a 7000", () => {
     expect(descuento_totalOrden(8000)).toEqual(7);
   });
+  it("Mostrar descuento de 10% si el total de la orden es mayor o igual a 10000", () => {
+    expect(descuento_totalOrden(10000)).toEqual(10);
+  });
+  it("Mostrar descuento de 10% si el total de la orden es mayor o igual a 10000", () => {
+    expect(descuento_totalOrden(11000)).toEqual(10);
+  });
 });
