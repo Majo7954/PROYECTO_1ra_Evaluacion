@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden } from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria } from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -101,5 +101,9 @@ describe("Calcular precio", () => {
   });
   it("Se muestra el precio total aplicando el descuento y el impuesto", () => {
     expect(calcular_precio(20,3)+aplicar_impuesto(impuesto_estado("TX"),calcular_precio(20,3))-descuento_totalOrden(calcular_precio(20,3))).toEqual(63.75);
+  });
+
+  it("Mostrar impuesto de 7% si la categoria del producto es bebidas alcoholicas", () => {
+    expect(impuesto_categoria("bebidas")).toEqual(7);
   });
 });
