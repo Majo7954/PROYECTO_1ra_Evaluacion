@@ -14,6 +14,9 @@ function calcular_precio(a,b) {
       case "NV":
         impuesto = 8.00;
         break;
+      case "UT":
+        impuesto = 6.65;
+        break;
       default:
         impuesto = 0;
     }
