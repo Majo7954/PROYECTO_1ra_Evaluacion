@@ -70,6 +70,12 @@ function calcular_precio(a,b) {
       case "vestimenta":
         impuesto = 2;
         break;
+      case "alimentos":
+        impuesto = 0;
+        break;
+      case "material":
+        impuesto = 0;
+        break;
       default:
         impuesto = 0;
     }
