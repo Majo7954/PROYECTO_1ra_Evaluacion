@@ -76,7 +76,7 @@ function calcular_precio(a,b) {
       case "material":
         impuesto = 0;
         break;
-      default:
+      case "varios":
         impuesto = 0;
     }
     return impuesto;

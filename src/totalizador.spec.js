@@ -121,4 +121,7 @@ describe("Calcular precio", () => {
   it("Mostrar impuesto de 0% si la categoria del producto es material de escritorio", () => {
     expect(impuesto_categoria("material")).toEqual(0);
   });
+  it("Mostrar impuesto de 0% si la categoria del producto es varios", () => {
+    expect(impuesto_categoria("varios")).toEqual(0);
+  });
 });
