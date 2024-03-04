@@ -16,6 +16,7 @@ form.addEventListener("submit", (event) => {
   const impuesto = impuesto_estado(estado);
   const impuestoAplicado=aplicar_impuesto(impuesto_estado(estado),calcular_precio(cantidad, precio));
   const descuento = descuento_totalOrden(precioNeto);
+  const descuentoAplicado = precioNeto*descuento/100;
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -28,7 +29,7 @@ form.addEventListener("submit", (event) => {
   div.innerHTML = "";
 
   // Agrega el párrafo al div
-  div.innerHTML = "<p> Descuento (" + descuento + "%)<p/>";
+  div.innerHTML = "<p> Descuento (" + descuento + "%): "+ descuentoAplicado + "<p/>";
   div.appendChild(paragraphPrecioNeto);
   div.appendChild(paragraphImpuesto);
 

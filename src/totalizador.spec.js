@@ -84,4 +84,19 @@ describe("Calcular precio", () => {
   it("Mostrar descuento de 15% si el total de la orden es mayor o igual a 30000", () => {
     expect(descuento_totalOrden(31000)).toEqual(15);
   });
+  it("Mostrar descuento de 30$ para un total de orden de 1000$", () => {
+    expect(descuento_totalOrden(calcular_precio(1000,1))*calcular_precio(1000,1)/100).toEqual(30);
+  });
+  it("Mostrar descuento de 150$ para un total de orden de 3000$", () => {
+    expect(descuento_totalOrden(calcular_precio(3000,1))*calcular_precio(3000,1)/100).toEqual(150);
+  });
+  it("Mostrar descuento de 490$ para un total de orden de 7000$", () => {
+    expect(descuento_totalOrden(calcular_precio(7000,1))*calcular_precio(7000,1)/100).toEqual(490);
+  });
+  it("Mostrar descuento de 1000$ para un total de orden de 10000$", () => {
+    expect(descuento_totalOrden(calcular_precio(10000,1))*calcular_precio(10000,1)/100).toEqual(1000);
+  });
+  it("Mostrar descuento de 4500$ para un total de orden de 30000$", () => {
+    expect(descuento_totalOrden(calcular_precio(30000,1))*calcular_precio(30000,1)/100).toEqual(4500);
+  });
 });
