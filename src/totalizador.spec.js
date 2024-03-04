@@ -99,4 +99,7 @@ describe("Calcular precio", () => {
   it("Mostrar descuento de 4500$ para un total de orden de 30000$", () => {
     expect(descuento_totalOrden(calcular_precio(30000,1))*calcular_precio(30000,1)/100).toEqual(4500);
   });
+  it("Se muestra el precio total aplicando el descuento y el impuesto", () => {
+    expect(calcular_precio(20,3)+aplicar_impuesto(impuesto_estado("TX"),calcular_precio(20,3))-descuento_totalOrden(calcular_precio(20,3))).toEqual(63.75);
+  });
 });
