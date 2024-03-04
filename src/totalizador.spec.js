@@ -37,8 +37,23 @@ describe("Calcular precio", () => {
     expect(impuesto_estado("AL")).toEqual(4.00);
   });
 
-  it("Mostrar el impuesto en dolares", () => {
+  it("Mostrar el impuesto en dolares(TX)", () => {
     expect(aplicar_impuesto(impuesto_estado("TX"),calcular_precio(20,3))).toEqual(3.75);
   });
 
+  it("Mostrar el impuesto en dolares(CA)", () => {
+    expect(aplicar_impuesto(impuesto_estado("CA"),calcular_precio(20,3))).toEqual(4.95);
+  });
+
+  it("Mostrar el impuesto en dolares(AL)", () => {
+    expect(aplicar_impuesto(impuesto_estado("AL"),calcular_precio(20,3))).toEqual(2.4);
+  });
+
+  it("Mostrar el impuesto en dolares(NV)", () => {
+    expect(aplicar_impuesto(impuesto_estado("NV"),calcular_precio(20,3))).toEqual(4.8);
+  });
+
+  it("Mostrar el impuesto en dolares(UT)", () => {
+    expect(aplicar_impuesto(impuesto_estado("UT"),calcular_precio(20,3))).toEqual(3.99);
+  });
 });
