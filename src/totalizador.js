@@ -35,14 +35,15 @@ function calcular_precio(a,b) {
   }
 
   function descuento_totalOrden(totalOrden) {
-    let descuento;
-    if(totalOrden >= 3000){
-      descuento = 5;
+    let descuento = 0;
+    if(totalOrden >= 7000){
+      descuento = 7;
     }else
-      if(totalOrden >= 1000){
-        descuento = 3;
+      if(totalOrden >= 3000){
+        descuento = 5;
       }else
-      descuento = 0;
+        if(totalOrden >= 1000)
+          descuento = 3;
     return descuento;
   }
 
