@@ -106,4 +106,7 @@ describe("Calcular precio", () => {
   it("Mostrar impuesto de 7% si la categoria del producto es bebidas alcoholicas", () => {
     expect(impuesto_categoria("bebidas")).toEqual(7);
   });
+  it("Mostrar impuesto de 4% si la categoria del producto es electronicos", () => {
+    expect(impuesto_categoria("electronicos")).toEqual(4);
+  });
 });

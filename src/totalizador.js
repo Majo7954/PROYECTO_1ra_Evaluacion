@@ -61,6 +61,9 @@ function calcular_precio(a,b) {
       case "bebidas":
         impuesto = 7;
         break;
+      case "electronicos":
+        impuesto = 4;
+        break;
       default:
         impuesto = 0;
     }
