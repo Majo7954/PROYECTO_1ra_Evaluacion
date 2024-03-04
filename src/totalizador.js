@@ -17,6 +17,9 @@ function calcular_precio(a,b) {
       case "UT":
         impuesto = 6.65;
         break;
+      case "TX":
+          impuesto = 6.25;
+          break;
       default:
         impuesto = 0;
     }
