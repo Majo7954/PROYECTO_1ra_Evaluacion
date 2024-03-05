@@ -37,6 +37,9 @@ form.addEventListener("submit", (event) => {
   const paragraphDescuentoCategoria = document.createElement("p");
   paragraphDescuentoCategoria.textContent = `Descuento para ${categoria} (${descuento_adicionalProducto}%): $${descuentoAplicadoCategoria}`;
 
+  const paragraphPesoVolumetrico = document.createElement("p");
+  paragraphPesoVolumetrico.textContent = `Peso Volumetrico: ${pesoVolumetrico}`;
+
   // Limpia el contenido anterior de div
   div.innerHTML = "";
 
@@ -48,4 +51,5 @@ form.addEventListener("submit", (event) => {
   div.appendChild(paragraphPrecioNeto);
   div.appendChild(paragraphImpuesto);
   div.appendChild(paragraphDescuentoCategoria);
+  div.appendChild(paragraphPesoVolumetrico);
 });
