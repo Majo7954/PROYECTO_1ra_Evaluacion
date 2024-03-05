@@ -103,7 +103,15 @@ function calcular_precio(a,b) {
       case "material":
         descuento = 1.5;
         break;
+      case "alimentos":
+        descuento = 2;
+        break;
     }
     return descuento;
   }
-  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria};
+
+  function aplicar_descuento(descuento, precioNeto){
+    let descuento_dolares=precioNeto*(descuento/100)
+    return descuento_dolares;
+  }
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento};

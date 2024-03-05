@@ -1,4 +1,4 @@
-import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria } from "./totalizador";
+import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento } from "./totalizador";
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
@@ -23,6 +23,7 @@ form.addEventListener("submit", (event) => {
   const impuesto_adicionalProducto = impuesto_categoria(categoria);
   const descuento_adicionalProducto = descuento_categoria(categoria);
   const impuesto_aplicadoProducto = impuesto_adicionalProducto*precioNeto/100;
+  const descuentoAplicadoCategoria = aplicar_descuento(descuento_adicionalProducto,precioNeto);
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -32,7 +33,7 @@ form.addEventListener("submit", (event) => {
   paragraphImpuesto.textContent = `Impuesto para ${estado}(${impuesto}%):$${impuestoAplicado}`;
 
   const paragraphDescuentoCategoria = document.createElement("p");
-  paragraphDescuentoCategoria.textContent = `Descuento para ${categoria} (${descuento_adicionalProducto}%): $`;
+  paragraphDescuentoCategoria.textContent = `Descuento para ${categoria} (${descuento_adicionalProducto}%): $${descuentoAplicadoCategoria}`;
 
   // Limpia el contenido anterior de div
   div.innerHTML = "";
