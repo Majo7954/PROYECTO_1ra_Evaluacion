@@ -4,6 +4,7 @@ const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
 const pesoV = document.querySelector("#peso");
 const estado_select = document.querySelector("#estado");
+const tipocliente_select = document.querySelector("#tipocliente");
 const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
 const categoria_select = document.querySelector("#categoria");
@@ -15,6 +16,7 @@ form.addEventListener("submit", (event) => {
   const precio = Number.parseInt(second.value);
   const pesoVolumetrico = Number.parseInt(pesoV.value);
   const estado = estado_select.value;
+  const tipocli = tipocliente_select.value;
   const categoria = categoria_select.value;
   const precioNeto = calcular_precio(cantidad, precio);
   const impuesto = impuesto_estado(estado);
@@ -26,7 +28,7 @@ form.addEventListener("submit", (event) => {
   const descuento_adicionalProducto = descuento_categoria(categoria);
   const impuesto_aplicadoProducto = impuesto_adicionalProducto*precioNeto/100;
   const descuentoAplicadoCategoria = aplicar_descuento(descuento_adicionalProducto,precioNeto);
-  const costoEnvio=costoEnvio(pesoVolumetrico);
+  const costoenvio=costoEnvio(pesoVolumetrico);
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -39,7 +41,7 @@ form.addEventListener("submit", (event) => {
   paragraphDescuentoCategoria.textContent = `Descuento para ${categoria} (${descuento_adicionalProducto}%): $${descuentoAplicadoCategoria}`;
 
   const paragraphPesoVolumetrico = document.createElement("p");
-  paragraphPesoVolumetrico.textContent = `Costo de Envío: $${costoEnvio}`;
+  paragraphPesoVolumetrico.textContent = `Costo de Envío: $${costoenvio}`;
 
   // Limpia el contenido anterior de div
   div.innerHTML = "";
