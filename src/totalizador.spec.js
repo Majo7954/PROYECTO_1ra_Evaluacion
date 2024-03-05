@@ -193,5 +193,9 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(electronicos) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("electronicos"), calcular_precio(2000,3))).toEqual(60);
   });
+
+  it("Devolver descuento por categoria(material) en dolares", () => {
+    expect(aplicar_descuento(descuento_categoria("material"), calcular_precio(2000,3))).toEqual(90);
+  });
 });
 
