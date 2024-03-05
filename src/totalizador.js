@@ -125,6 +125,10 @@ function calcular_precio(a,b) {
       costo=6.5;
     } else if (peso>=41 && peso<=80){
       costo=6;
+    } else if (peso>=21 && peso<=40){
+      costo=5;
+    } else if (peso>=11 && peso<=20){
+      costo=3.5;
     }
     return costo;
   }

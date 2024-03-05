@@ -223,7 +223,11 @@ describe("Calcular precio", () => {
   });
 
   it("Devolver el costo de envio segun el precio(21-40)", () => {
-    expect(costoEnvio(50)).toEqual(6);
+    expect(costoEnvio(30)).toEqual(5);
+  });
+
+  it("Devolver el costo de envio segun el precio(11-20)", () => {
+    expect(costoEnvio(15)).toEqual(3.5);
   });
 });
 
