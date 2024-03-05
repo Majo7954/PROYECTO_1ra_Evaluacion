@@ -209,5 +209,9 @@ describe("Calcular precio", () => {
   it("Devolver el costo de envio segun el precio(>200)", () => {
     expect(costoEnvio(300)).toEqual(9);
   });
+
+  it("Devolver el costo de envio segun el precio(101-200)", () => {
+    expect(costoEnvio(150)).toEqual(8);
+  });
 });
 

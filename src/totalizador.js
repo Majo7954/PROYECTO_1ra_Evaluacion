@@ -119,6 +119,8 @@ function calcular_precio(a,b) {
     let costo;
     if(peso>200){
       costo=9;
+    } else if (peso>=101 && peso<=200){
+      costo=8;
     }
     return costo;
   }
