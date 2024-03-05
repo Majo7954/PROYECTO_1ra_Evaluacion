@@ -114,4 +114,13 @@ function calcular_precio(a,b) {
     let descuento_dolares=precioNeto*(descuento/100)
     return descuento_dolares;
   }
-  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento};
+
+  function costoEnvio(peso){
+    let costo;
+    if(peso>200){
+      costo=9;
+    }
+    return costo;
+  }
+
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio};

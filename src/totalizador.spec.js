@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento} from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento, costoEnvio} from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -204,6 +204,10 @@ describe("Calcular precio", () => {
 
   it("Devolver descuento por categoria(alimentos) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("alimentos"), calcular_precio(2000,3))).toEqual(120);
+  });
+
+  it("Devolver el costo de envio segun el precio(>200)", () => {
+    expect(costoEnvio(300)).toEqual(9);
   });
 });
 
