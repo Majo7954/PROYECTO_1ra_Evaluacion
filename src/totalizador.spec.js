@@ -185,5 +185,9 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(vestimenta) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("vestimenta"), calcular_precio(2000,3))).toEqual(0);
   });
+
+  it("Devolver descuento por categoria(varios) en dolares", () => {
+    expect(aplicar_descuento(descuento_categoria("varios"), calcular_precio(2000,3))).toEqual(0);
+  });
 });
 
