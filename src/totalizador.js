@@ -94,6 +94,9 @@ function calcular_precio(a,b) {
       case "vestimenta":
         descuento = 0;
         break;
+      case "varios":
+        descuento = 0;
+        break;
     }
     return descuento;
   }
