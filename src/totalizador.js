@@ -100,6 +100,9 @@ function calcular_precio(a,b) {
       case "electronicos":
         descuento = 1;
         break;
+      case "material":
+        descuento = 1.5;
+        break;
     }
     return descuento;
   }
