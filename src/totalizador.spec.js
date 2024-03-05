@@ -177,10 +177,13 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(bebidas) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("bebidas"), calcular_precio(2000,3))).toEqual(0);
   });
-  
+
   it("Devolver descuento por categoria(muebles) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("muebles"), calcular_precio(2000,3))).toEqual(0);
   });
 
+  it("Devolver descuento por categoria(vestimenta) en dolares", () => {
+    expect(aplicar_descuento(descuento_categoria("vestimenta"), calcular_precio(2000,3))).toEqual(0);
+  });
 });
 
