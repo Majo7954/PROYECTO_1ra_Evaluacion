@@ -82,4 +82,13 @@ function calcular_precio(a,b) {
     return impuesto;
   }
 
-  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria};
+  function descuento_categoria(categoria){
+    let descuento;
+    switch (categoria) {
+      case "bebidas":
+        descuento = 0;
+        break;
+    }
+    return descuento;
+  }
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria};

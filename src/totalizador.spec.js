@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria } from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria } from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -145,4 +145,9 @@ describe("Calcular precio", () => {
   it("Se muestra el impuesto segun categoria del producto expresado en dolares", () => {
     expect(impuesto_categoria("varios")*calcular_precio(10,2)/100).toEqual(0);
   });
+
+  it("Devolver descuento por categoria(bebidas)", () => {
+    expect(descuento_categoria("bebidas")).toEqual(0);
+  });
 });
+
