@@ -97,6 +97,9 @@ function calcular_precio(a,b) {
       case "varios":
         descuento = 0;
         break;
+      case "electronicos":
+        descuento = 1;
+        break;
     }
     return descuento;
   }

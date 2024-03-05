@@ -161,5 +161,9 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(varios)", () => {
     expect(descuento_categoria("varios")).toEqual(0);
   });
+
+  it("Devolver descuento por categoria(electronicos)", () => {
+    expect(descuento_categoria("electronicos")).toEqual(1);
+  });
 });
 
