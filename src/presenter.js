@@ -2,6 +2,7 @@ import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrde
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
+const pesoV = document.querySelector("#peso");
 const estado_select = document.querySelector("#estado");
 const form = document.querySelector("#totalizador-form");
 const div = document.querySelector("#resultado-div");
@@ -12,6 +13,7 @@ form.addEventListener("submit", (event) => {
 
   const cantidad = Number.parseInt(first.value);
   const precio = Number.parseInt(second.value);
+  const pesoVolumetrico = Number.parseInt(pesoV.value);
   const estado = estado_select.value;
   const categoria = categoria_select.value;
   const precioNeto = calcular_precio(cantidad, precio);
