@@ -88,6 +88,9 @@ function calcular_precio(a,b) {
       case "bebidas":
         descuento = 0;
         break;
+      case "muebles":
+        descuento = 0;
+        break;
     }
     return descuento;
   }
