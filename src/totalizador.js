@@ -91,6 +91,9 @@ function calcular_precio(a,b) {
       case "muebles":
         descuento = 0;
         break;
+      case "vestimenta":
+        descuento = 0;
+        break;
     }
     return descuento;
   }

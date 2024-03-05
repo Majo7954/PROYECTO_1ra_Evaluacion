@@ -153,5 +153,9 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(muebles)", () => {
     expect(descuento_categoria("muebles")).toEqual(0);
   });
+
+  it("Devolver descuento por categoria(vestimenta)", () => {
+    expect(descuento_categoria("vestimenta")).toEqual(0);
+  });
 });
 
