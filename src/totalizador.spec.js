@@ -197,5 +197,13 @@ describe("Calcular precio", () => {
   it("Devolver descuento por categoria(material) en dolares", () => {
     expect(aplicar_descuento(descuento_categoria("material"), calcular_precio(2000,3))).toEqual(90);
   });
+
+  it("Devolver descuento por categoria(material) en dolares", () => {
+    expect(aplicar_descuento(descuento_categoria("material"), calcular_precio(2000,3))).toEqual(90);
+  });
+
+  it("Devolver descuento por categoria(alimentos) en dolares", () => {
+    expect(aplicar_descuento(descuento_categoria("alimentos"), calcular_precio(2000,3))).toEqual(120);
+  });
 });
 
