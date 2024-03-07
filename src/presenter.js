@@ -23,7 +23,6 @@ form.addEventListener("submit", (event) => {
   const impuestoAplicado=aplicar_impuesto(impuesto_estado(estado),calcular_precio(cantidad, precio));
   const descuento = descuento_totalOrden(precioNeto);
   const descuentoAplicado = precioNeto*descuento/100;
-  const precioTotal = precioNeto + impuestoAplicado - descuentoAplicado;
   const impuesto_adicionalProducto = impuesto_categoria(categoria);
   const descuento_adicionalProducto = descuento_categoria(categoria);
   const impuesto_aplicadoProducto = impuesto_adicionalProducto*precioNeto/100;
@@ -34,6 +33,7 @@ form.addEventListener("submit", (event) => {
   const descuento_fijo = descuentoFijo(tipocli, precioNeto, categoria);
   const costoEnvioTotal = costoenvio * cantidad;
   const descuentoEnvio_aplicadoTotal = descuentoEnvio_aplicado * cantidad;
+  const precioTotal = precioNeto + impuestoAplicado - descuentoAplicado + impuesto_aplicadoProducto - descuentoAplicadoCategoria + costoEnvioTotal - descuentoEnvio_aplicadoTotal - descuento_fijo;
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -54,12 +54,12 @@ form.addEventListener("submit", (event) => {
   // Agrega el párrafo al div
   var mensaje_descuento = "<p> Descuento (" + descuento + "%): $"+ descuentoAplicado + "<p/>";
   var mensaje_impuestoProducto = "<p> Impuesto para " + categoria + "(" + impuesto_adicionalProducto + "%): $" + impuesto_aplicadoProducto +"<p/>";
-  var mensaje_precioTotal = "<p> Precio Total (descuento e impuesto): $" + precioTotal + "</p>";
+  var mensaje_precioTotal = "<p> Precio Total (descuentos e impuestos): $" + precioTotal + "</p>";
   var mensaje_costoEnvioTotal = "<p> Costo de Envio Total ($" + costoenvio + " * " + cantidad + "): " + costoEnvioTotal + "</p>";
   var mensaje_descuentoEnvio = "<p> Descuento de costo de envio para cliente " + tipocli + "(" + descuento_Envio + "%): $" + descuentoEnvio_aplicado + "</p>";
   var mensaje_descuentoEnvioTotal = "<p> Descuento de costo de envio total  para cliente " + tipocli + "(" + descuento_Envio + "%): $" + descuentoEnvio_aplicadoTotal + "</p>";
   var mensaje_descuentoFijo = "<p> Descuento fijo (tipo cliente: " + tipocli + ", precio neto: $" + precioNeto + ", categoria producto" + categoria + "): $" + descuento_fijo + "</p>";
-  div.innerHTML = mensaje_descuento + mensaje_impuestoProducto + mensaje_precioTotal + mensaje_costoEnvioTotal + mensaje_descuentoEnvio + mensaje_descuentoEnvioTotal + mensaje_descuentoFijo;
+  div.innerHTML = mensaje_descuento + mensaje_impuestoProducto + mensaje_costoEnvioTotal + mensaje_descuentoEnvio + mensaje_descuentoEnvioTotal + mensaje_descuentoFijo + mensaje_precioTotal;
   div.appendChild(paragraphPrecioNeto);
   div.appendChild(paragraphImpuesto);
   div.appendChild(paragraphDescuentoCategoria);
