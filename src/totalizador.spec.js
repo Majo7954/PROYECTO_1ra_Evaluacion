@@ -237,5 +237,8 @@ describe("Calcular precio", () => {
   it("Mostrar descuento de costo de envio (0%) segun el tipo de cliente (Normal)", () => {
     expect(descuentoEnvio("Normal")).toEqual(0);
   });
+  it("Mostrar descuento de costo de envio (0.5%) segun el tipo de cliente (Recurrente)", () => {
+    expect(descuentoEnvio("Recurrente")).toEqual(0.5);
+  });
 });
 

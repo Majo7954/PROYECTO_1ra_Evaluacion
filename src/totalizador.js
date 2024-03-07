@@ -141,6 +141,9 @@ function calcular_precio(a,b) {
       case "Normal":
         descuento = 0;
         break;
+      case "Recurrente":
+        descuento = 0.5;
+        break;
     }
     return descuento;
   }
