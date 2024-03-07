@@ -1,4 +1,4 @@
-import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio, descuentoEnvio} from "./totalizador";
+import { calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio, descuentoEnvio, descuentoFijo} from "./totalizador";
 
 const first = document.querySelector("#cantidad");
 const second = document.querySelector("#precio");
@@ -31,6 +31,7 @@ form.addEventListener("submit", (event) => {
   const costoenvio=costoEnvio(pesoVolumetrico);
   const descuento_Envio = descuentoEnvio(tipocli);
   const descuentoEnvio_aplicado = costoenvio * descuento_Envio / 100;
+  const descuento_fijo = descuentoFijo(tipocli, precioNeto, categoria);
 
   // Crea un elemento de párrafo
   const paragraphPrecioNeto = document.createElement("p");
@@ -53,7 +54,8 @@ form.addEventListener("submit", (event) => {
   var mensaje_impuestoProducto = "<p> Impuesto para " + categoria + "(" + impuesto_adicionalProducto + "%): $" + impuesto_aplicadoProducto +"<p/>";
   var mensaje_precioTotal = "<p> Precio Total (descuento e impuesto): $" + precioTotal + "</p>";
   var mensaje_descuentoEnvio = "<p> Descuento de costo de envio para cliente " + tipocli + "(" + descuento_Envio + "%): $" + descuentoEnvio_aplicado + "</p>";
-  div.innerHTML = mensaje_descuento + mensaje_impuestoProducto + mensaje_precioTotal + mensaje_descuentoEnvio;
+  var mensaje_descuentoFijo = "<p> Descuento fijo (tipo cliente: " + tipocli + ", precio neto: $" + precioNeto + ", categoria producto" + categoria + "): $" + descuento_fijo + "</p>";
+  div.innerHTML = mensaje_descuento + mensaje_impuestoProducto + mensaje_precioTotal + mensaje_descuentoEnvio + mensaje_descuentoFijo;
   div.appendChild(paragraphPrecioNeto);
   div.appendChild(paragraphImpuesto);
   div.appendChild(paragraphDescuentoCategoria);

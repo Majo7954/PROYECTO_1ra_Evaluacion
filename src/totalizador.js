@@ -154,4 +154,12 @@ function calcular_precio(a,b) {
     return descuento;
   }
 
-  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio, descuentoEnvio};
+  function descuentoFijo(tipoCliente, precioNeto, categoriaProducto){
+    let descuentoF = 0;
+    if(tipoCliente === "Recurrente" && precioNeto >=3000 && categoriaProducto === "alimentos"){
+      descuentoF = 100;
+    }
+    return descuentoF;
+  }
+
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio, descuentoEnvio, descuentoFijo};

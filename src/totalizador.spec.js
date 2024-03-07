@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento, costoEnvio, descuentoEnvio} from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento, costoEnvio, descuentoEnvio, descuentoFijo} from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -257,6 +257,9 @@ describe("Calcular precio", () => {
   });
   it("Mostrar descuento de envio(Especial) en dolares", () => {
     expect(descuentoEnvio("Especial")*costoEnvio(250)/100).toEqual(0.135);
+  });
+  it("Mostrar desucuento fijo ($100) si el cliente es recurrente, el precio neto es mayor a 3000 y la categoria de producto es alimentos", () => {
+    expect(descuentoFijo("Recurrente", 3001, "alimentos")).toEqual(100);
   });
 });
 
