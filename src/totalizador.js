@@ -121,7 +121,7 @@ function calcular_precio(a,b) {
       costo=9;
     } else if (peso>=101 && peso<=200){
       costo=8;
-    } else if (peso>=80 && peso<=100){
+    } else if (peso>=81 && peso<=100){
       costo=6.5;
     } else if (peso>=41 && peso<=80){
       costo=6;

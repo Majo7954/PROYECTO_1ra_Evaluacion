@@ -206,31 +206,31 @@ describe("Calcular precio", () => {
     expect(aplicar_descuento(descuento_categoria("alimentos"), calcular_precio(2000,3))).toEqual(120);
   });
 
-  it("Devolver el costo de envio segun el precio(>200)", () => {
+  it("Devolver el costo de envio segun el peso(>200)", () => {
     expect(costoEnvio(300)).toEqual(9);
   });
 
-  it("Devolver el costo de envio segun el precio(101-200)", () => {
+  it("Devolver el costo de envio segun el peso(101-200)", () => {
     expect(costoEnvio(150)).toEqual(8);
   });
 
-  it("Devolver el costo de envio segun el precio(80-100)", () => {
+  it("Devolver el costo de envio segun el peso(80-100)", () => {
     expect(costoEnvio(90)).toEqual(6.5);
   });
 
-  it("Devolver el costo de envio segun el precio(41-80)", () => {
+  it("Devolver el costo de envio segun el peso(41-80)", () => {
     expect(costoEnvio(50)).toEqual(6);
   });
 
-  it("Devolver el costo de envio segun el precio(21-40)", () => {
+  it("Devolver el costo de envio segun el peso(21-40)", () => {
     expect(costoEnvio(30)).toEqual(5);
   });
 
-  it("Devolver el costo de envio segun el precio(11-20)", () => {
+  it("Devolver el costo de envio segun el peso(11-20)", () => {
     expect(costoEnvio(15)).toEqual(3.5);
   });
 
-  it("Devolver el costo de envio segun el precio(0-10)", () => {
+  it("Devolver el costo de envio segun el peso(0-10)", () => {
     expect(costoEnvio(9)).toEqual(0);
   });
 });
