@@ -156,9 +156,12 @@ function calcular_precio(a,b) {
 
   function descuentoFijo(tipoCliente, precioNeto, categoriaProducto){
     let descuentoF = 0;
-    if(tipoCliente === "Recurrente" && precioNeto >=3000 && categoriaProducto === "alimentos"){
+    if(tipoCliente === "Recurrente" && precioNeto >3000 && categoriaProducto === "alimentos"){
       descuentoF = 100;
-    }
+    }else
+      if(tipoCliente === "Especial" && precioNeto >7000 && categoriaProducto === "electronicos"){
+        descuentoF = 200;
+      }
     return descuentoF;
   }
 

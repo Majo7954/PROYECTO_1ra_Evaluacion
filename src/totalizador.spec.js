@@ -261,5 +261,8 @@ describe("Calcular precio", () => {
   it("Mostrar desucuento fijo ($100) si el cliente es recurrente, el precio neto es mayor a 3000 y la categoria de producto es alimentos", () => {
     expect(descuentoFijo("Recurrente", 3001, "alimentos")).toEqual(100);
   });
+  it("Mostrar desucuento fijo ($200) si el cliente es especial, el precio neto es mayor a 7000 y la categoria de producto es electronicos", () => {
+    expect(descuentoFijo("Especial", 7001, "electronicos")).toEqual(200);
+  });
 });
 
