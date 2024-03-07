@@ -144,6 +144,9 @@ function calcular_precio(a,b) {
       case "Recurrente":
         descuento = 0.5;
         break;
+      case "Antiguo_Recurrente":
+        descuento = 1;
+        break;
     }
     return descuento;
   }
