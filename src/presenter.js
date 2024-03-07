@@ -50,5 +50,11 @@ form.addEventListener("submit", (event) => {
   var mensaje_descuentoEnvio = "<p> Descuento de costo de envio para cliente " + tipocli + "(" + descuento_Envio + "%): $" + descuentoEnvio_aplicado + "</p>";
   var mensaje_descuentoEnvioTotal = "<p> Descuento de costo de envio total  para cliente " + tipocli + "(" + descuento_Envio + "%): $" + descuentoEnvio_aplicadoTotal + "</p>";
   var mensaje_descuentoFijo = "<p> Descuento fijo (tipo cliente: " + tipocli + ", precio neto: $" + precioNeto + ", categoria producto" + categoria + "): $" + descuento_fijo + "</p>";
+  
+  var mensaje_error = "<p>Por favor, llene todos los datos de forma correcta</p>";
+  if(isNaN(cantidad) || cantidad<=0 || isNaN(precio) || precio<=0 || isNaN(pesoVolumetrico) || pesoVolumetrico<=0){
+    div.innerHTML = mensaje_error;
+  }else{
   div.innerHTML = m_PrecioNeto + m_impuesto + mensaje_descuento + mensaje_impuestoProducto + m_descuentoCategoria + m_pesoVolumetrico + mensaje_costoEnvioTotal + mensaje_descuentoEnvio + mensaje_descuentoEnvioTotal + mensaje_descuentoFijo + mensaje_precioTotal;
+  }
 });
