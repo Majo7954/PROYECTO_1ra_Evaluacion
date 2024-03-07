@@ -246,5 +246,17 @@ describe("Calcular precio", () => {
   it("Mostrar descuento de costo de envio (1.5%) segun el tipo de cliente (Especial)", () => {
     expect(descuentoEnvio("Especial")).toEqual(1.5);
   });
+  it("Mostrar descuento de envio(Normal) en dolares", () => {
+    expect(descuentoEnvio("Normal")*costoEnvio(250)/100).toEqual(0);
+  });
+  it("Mostrar descuento de envio(Recurrente) en dolares", () => {
+    expect(descuentoEnvio("Recurrente")*costoEnvio(250)/100).toEqual(0.045);
+  });
+  it("Mostrar descuento de envio(Antiguo_Recurrente) en dolares", () => {
+    expect(descuentoEnvio("Antiguo_Recurrente")*costoEnvio(250)/100).toEqual(0.09);
+  });
+  it("Mostrar descuento de envio(Especial) en dolares", () => {
+    expect(descuentoEnvio("Especial")*costoEnvio(250)/100).toEqual(0.135);
+  });
 });
 
