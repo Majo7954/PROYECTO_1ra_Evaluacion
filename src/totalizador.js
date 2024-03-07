@@ -135,4 +135,14 @@ function calcular_precio(a,b) {
     return costo;
   }
 
-  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio};
+  function descuentoEnvio(tipoCliente){
+    let descuento;
+    switch(tipoCliente){
+      case "Normal":
+        descuento = 0;
+        break;
+    }
+    return descuento;
+  }
+
+  export {calcular_precio,impuesto_estado,aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria, aplicar_descuento, costoEnvio, descuentoEnvio};

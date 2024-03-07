@@ -1,4 +1,4 @@
-import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento, costoEnvio} from "./totalizador.js";
+import {calcular_precio, impuesto_estado, aplicar_impuesto, descuento_totalOrden, impuesto_categoria, descuento_categoria , aplicar_descuento, costoEnvio, descuentoEnvio} from "./totalizador.js";
 
 describe("Calcular precio", () => {
   it("Devolver la cantidad ingresada", () => {
@@ -232,6 +232,10 @@ describe("Calcular precio", () => {
 
   it("Devolver el costo de envio segun el peso(0-10)", () => {
     expect(costoEnvio(9)).toEqual(0);
+  });
+
+  it("Mostrar descuento de costo de envio (0%) segun el tipo de cliente (Normal)", () => {
+    expect(descuentoEnvio("Normal")).toEqual(0);
   });
 });
 
